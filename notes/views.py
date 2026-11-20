@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import NotesDb,TaskDb
 from .serializers import NotesSerializer,TaskSerializer
 from rest_framework.authtoken.models import Token
+from rest_framework _simple_JWT.tokens import RefreshToken
 
 # Create your views here.
 class RegisterationView(APIView):
@@ -195,3 +196,20 @@ class TaskRetrieveUpdateDeleteView(APIView):
             return Response(data={"message": "Task deleted successfully"})
         else:
             return Response(data={"error": "Task not found"}, status=404)
+
+
+class JWT_Logout(APIView):
+    permission_class = [IsAuthentication]
+
+    def post(self,request):
+        try:
+            refresh_token = request.data.get('refresh')
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            reeturn Response({
+                "Message" : "Logout Success"
+            })
+        except Exception:
+            return Response({
+                "error" : "Invalid refresh token "
+            })
