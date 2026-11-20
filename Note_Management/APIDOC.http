@@ -1,0 +1,118 @@
+###
+POST http://127.0.0.1:8000/api/register/ 
+Content-Type: application/json
+
+{
+    "username": "Nathaniel",
+    "email": "nadhu@example.com",
+    "password": "nadhu@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "username": "Aidhan",
+    "password": "aidhan@123"
+}
+#sharont-"token": "31361591d6dcb495827ff65aa0b475f2ee54acf9"
+#sharu - "token": 4f2ae14ed89634b0fb33b1f4a378389972f1ce64
+#maria- 26f203a8f8c78930e6dd99de6c49b4cf921e15bb
+#aidhan-5fb524e284188aa031cc209fc77c8e120f58ecfe
+
+###
+GET http://127.0.0.1:8000/api/notes/
+Accept: application/json
+Authorization: Token 5fb524e284188aa031cc209fc77c8e120f58ecfe
+
+
+
+###
+POST http://127.0.0.1:8000/api/notes/
+Content-Type: application/json
+Authorization: Token 5fb524e284188aa031cc209fc77c8e120f58ecfe
+
+{
+    "title": "History of Python",
+    "description": "Python is a dynamically typed language"
+}   
+
+
+###
+GET http://127.0.0.1:8000/api/logout/
+Accept: application/json
+Authorization: Token 26f203a8f8c78930e6dd99de6c49b4cf921e15bb
+
+###
+POST http://127.0.0.1:8000/api/jwt_login/
+Content-Type: application/json
+
+{
+    "username": "Nathaniel",
+    "email": "nadhu@example.com",
+    "password": "nadhu@123"
+}
+
+#{
+ # "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTE2NTc4NCwiaWF0IjoxNzk1MDc5Mzg0LCJqdGkiOiJjY2Y3MGMxMDVmMWU0ZmQ2YWJlY2M1MWRlMDk2ODg2ZSIsInVzZXJfaWQiOiI1In0.P4Rc_Mdenv95vshPOCPHJaDfZ9gTjeqWsWia0JzOvKs",
+ # "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MDc5Njg0LCJpYXQiOjE3OTUwNzkzODQsImp0aSI6ImI3MDllNzdiMWM0NzRjZGRiNTA5OWYwMzY3YjZmYTI4IiwidXNlcl9pZCI6IjUifQ.jkpiR4rYBf-PV7J1_4ZpXTYot3hFA49mUum_2_RN26w"
+#}
+
+#maria
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTE0NjcwLCJpYXQiOjE3OTUxMTQzNzAsImp0aSI6ImVkOGZmYjg4NzhiZjQ2ZDA4OGFkNTY4ZGU4YWQ5ZWRiIiwidXNlcl9pZCI6IjYifQ.EXzm-YqnC9jl6ZHgVa5qsQaUpoHZT74o92FnR8ADVNU
+
+
+###
+GET   http://127.0.0.1:8000/api/task/
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTUzMzE5LCJpYXQiOjE3OTUxNTMwMTksImp0aSI6ImNhNmE0ODJkMWJhZjQ3ZmNhNjVjNzE4NzRiYjg2OWJiIiwidXNlcl9pZCI6IjgifQ.OprQjbopNuFgwGtxjAVLx72l2nTi4Vhbx6-tro4YJ80
+
+
+###
+POST http://127.0.0.1:8000/api/task/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTUzMzE5LCJpYXQiOjE3OTUxNTMwMTksImp0aSI6ImNhNmE0ODJkMWJhZjQ3ZmNhNjVjNzE4NzRiYjg2OWJiIiwidXNlcl9pZCI6IjgifQ.OprQjbopNuFgwGtxjAVLx72l2nTi4Vhbx6-tro4YJ80
+
+
+{
+    "title": "Learn Django",
+    "description": "Practice REST API",
+    "due_date": "2026-11-25",
+    "status": "pending"
+}
+
+###
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYyODI1LCJpYXQiOjE3OTUxNjI1MjUsImp0aSI6IjUwMGRmMjBlNjdmNTRhNzc4OGI4MDNkZDBjODRjZWQwIiwidXNlcl9pZCI6IjgifQ.nxVWIc7yh47Vh_gK8HgJiZVDC2NeW5fw3yJjiMsEKBA
+
+{
+    "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTI0ODkyNSwiaWF0IjoxNzk1MTYyNTI1LCJqdGkiOiIxZDU1MTc2NjAxNWU0YjUwYWVlY2Q2ZmE0YjBhYzM1NiIsInVzZXJfaWQiOiI4In0.eIUySSGnaNNG1IitM4bmwtQfG757FUdUt_rHApsx9Wo"
+}
+
+###
+GET http://127.0.0.1:8000/api/task/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzEyLCJpYXQiOjE3OTUxNjQwMTIsImp0aSI6IjI2OTFiMmJlNDEzMjRlNmZhNDgyMzQzN2RhYWIzZGNjIiwidXNlcl9pZCI6IjgifQ.TyHgS4ykzCO96ZsNRrePhuHCsA3fEU5T5wRIMiATL68
+
+
+###
+PUT http://127.0.0.1:8000/api/task/1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzEyLCJpYXQiOjE3OTUxNjQwMTIsImp0aSI6IjI2OTFiMmJlNDEzMjRlNmZhNDgyMzQzN2RhYWIzZGNjIiwidXNlcl9pZCI6IjgifQ.TyHgS4ykzCO96ZsNRrePhuHCsA3fEU5T5wRIMiATL68
+
+{
+    "title": "Learn Django",
+    "description": "Practice REST API",
+    "due_date": "2026-11-28",
+    "status": "pending"
+}
+
+###
+DELETE  http://127.0.0.1:8000/api/task/1/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzEyLCJpYXQiOjE3OTUxNjQwMTIsImp0aSI6IjI2OTFiMmJlNDEzMjRlNmZhNDgyMzQzN2RhYWIzZGNjIiwidXNlcl9pZCI6IjgifQ.TyHgS4ykzCO96ZsNRrePhuHCsA3fEU5T5wRIMiATL68
+
+
+
